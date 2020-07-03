@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.softWalter.cursoMC.domain.Categoria;
 import com.softWalter.cursoMC.services.CategoriaService;
 
+import javassist.tools.rmi.ObjectNotFoundException;
+
 @RestController
 @RequestMapping(value = "/categorias")
 public class CategoriaResources {
@@ -17,16 +19,11 @@ public class CategoriaResources {
 	private CategoriaService service;
 	
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET )
-	public ResponseEntity<?> find(@PathVariable Integer id) {
+	public ResponseEntity<?> find(@PathVariable Integer id) throws ObjectNotFoundException {
 		
 		Categoria obj = service.buscar(id);
 		return ResponseEntity.ok().body(obj);
-		
-		/*Categoria cat1 = new Categoria(1, "informatica");
-		Categoria cat2 = new Categoria(2, "escritorio");
-		List<Categoria>lista = new ArrayList<>();
-		lista.add(cat1);
-		lista.add(cat2);*/
+
 	}
 
 }
