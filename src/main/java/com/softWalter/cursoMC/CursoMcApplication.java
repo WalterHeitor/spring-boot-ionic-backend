@@ -10,12 +10,15 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import com.softWalter.cursoMC.domain.Categoria;
 import com.softWalter.cursoMC.domain.Produto;
 import com.softWalter.cursoMC.repositories.CategoriaRepository;
+import com.softWalter.cursoMC.repositories.ProdutoRepository;
 
 @SpringBootApplication
 public class CursoMcApplication implements CommandLineRunner{
 
 	@Autowired
 	private CategoriaRepository categoriaRepository;
+	@Autowired
+	private ProdutoRepository produtoRepository;
 	
 	public static void main(String[] args) {
 		
@@ -39,6 +42,7 @@ public class CursoMcApplication implements CommandLineRunner{
 		p3.getCategorias().addAll(Arrays.asList(cat1));
 		
 		categoriaRepository.saveAll(Arrays.asList(cat1, cat2));
+		produtoRepository.saveAll(Arrays.asList(p1,p2,p3));
 		
 	}
 
