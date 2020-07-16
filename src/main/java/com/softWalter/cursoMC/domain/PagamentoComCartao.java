@@ -1,7 +1,10 @@
 package com.softWalter.cursoMC.domain;
 
+import javax.persistence.Entity;
+
 import com.softWalter.cursoMC.domain.enums.EstadoPagamento;
 
+@Entity
 public class PagamentoComCartao extends Pagamento{
 	
 	private static final long serialVersionUID = 1L;
