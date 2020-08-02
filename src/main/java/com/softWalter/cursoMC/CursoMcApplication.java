@@ -33,7 +33,7 @@ import com.softWalter.cursoMC.repositories.ProdutoRepository;
 
 @SpringBootApplication
 public class CursoMcApplication implements CommandLineRunner{
-
+//intection
 	@Autowired
 	private CategoriaRepository categoriaRepository;
 	@Autowired
