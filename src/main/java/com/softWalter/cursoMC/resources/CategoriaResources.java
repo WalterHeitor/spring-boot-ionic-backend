@@ -49,9 +49,8 @@ public class CategoriaResources {
 		service.delete(id);
 		return ResponseEntity.noContent().build();
 	}
-	
 	@RequestMapping(method = RequestMethod.GET )
-	public ResponseEntity<List<Categoria>> findAll(){
+	public ResponseEntity<List<Categoria>> findAll(@PathVariable Integer id){
 		
 		List<Categoria> list = service.findAll();
 		return ResponseEntity.ok().body(list);
