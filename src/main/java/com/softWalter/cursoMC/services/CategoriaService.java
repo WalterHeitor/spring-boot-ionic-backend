@@ -3,10 +3,12 @@ package com.softWalter.cursoMC.services;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
 import com.softWalter.cursoMC.domain.Categoria;
 import com.softWalter.cursoMC.repositories.CategoriaRepository;
+import com.softWalter.cursoMC.services.exceptions.DataIntegrityException;
 import com.softWalter.cursoMC.services.exceptions.ObjectNotFoundException;
 
 @Service
@@ -35,7 +37,12 @@ public class CategoriaService {
 
 	public void delete(Integer id) {
 		find(id);
-		repo.deleteById(id);
+		try {
+			repo.deleteById(id);
+		} catch (DataIntegrityViolationException e) {
+			throw new DataIntegrityException("Não e possivel"
+					+ "excluir uma Categoria que contem produtos");
+		}
 	}
 	
 }
