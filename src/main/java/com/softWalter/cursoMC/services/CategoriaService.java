@@ -32,5 +32,6 @@ public class CategoriaService {
 		find(obj.getId());
 		return repo.save(obj);
 	}
+	//wal
 
 }
