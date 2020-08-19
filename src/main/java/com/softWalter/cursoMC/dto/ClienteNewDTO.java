@@ -15,9 +15,9 @@ public class ClienteNewDTO implements Serializable{
 	private String bairro;
 	private String cep;
 	
-	private String teleforne1;
-	private String teleforne2;
-	private String teleforne3;
+	private String telefone1;
+	private String telefone2;
+	private String telefone3;
 	
 	private Integer cidadeId;
 	
@@ -89,28 +89,28 @@ public class ClienteNewDTO implements Serializable{
 		this.cep = cep;
 	}
 
-	public String getTeleforne1() {
-		return teleforne1;
+	public String getTelefone1() {
+		return telefone1;
 	}
 
-	public void setTeleforne1(String teleforne1) {
-		this.teleforne1 = teleforne1;
+	public void setTelefone1(String teleforne1) {
+		this.telefone1 = teleforne1;
 	}
 
-	public String getTeleforne2() {
-		return teleforne2;
+	public String getTelefone2() {
+		return telefone2;
 	}
 
-	public void setTeleforne2(String teleforne2) {
-		this.teleforne2 = teleforne2;
+	public void setTelefone2(String teleforne2) {
+		this.telefone2 = teleforne2;
 	}
 
-	public String getTeleforne3() {
-		return teleforne3;
+	public String getTelefone3() {
+		return telefone3;
 	}
 
-	public void setTeleforne3(String teleforne3) {
-		this.teleforne3 = teleforne3;
+	public void setTelefone3(String teleforne3) {
+		this.telefone3 = teleforne3;
 	}
 
 	public Integer getCidadeId() {

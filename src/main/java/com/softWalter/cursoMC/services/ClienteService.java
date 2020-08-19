@@ -50,7 +50,7 @@ public class ClienteService {
 			repo.deleteById(id);
 		} catch (DataIntegrityViolationException e) {
 			throw new DataIntegrityException("Não e possivel"
-					+ "excluir uma Cliente que contem produtos");
+					+ "excluir uma Cliente por que contem pedidos relacionados");
 		}
 	}
 	
@@ -78,12 +78,12 @@ public class ClienteService {
 		Endereco end = new Endereco(null, objDto.getLogadouro(), objDto.getComplemento(),
 				objDto.getBairro(), objDto.getCep(), cli, cid);
 		cli.getEnderecos().add(end);
-		cli.getTelefones().add(objDto.getTeleforne1());
-		if(objDto.getTeleforne2() != null) {
-			cli.getTelefones().add(objDto.getTeleforne2());
+		cli.getTelefones().add(objDto.getTelefone1());
+		if(objDto.getTelefone2() != null) {
+			cli.getTelefones().add(objDto.getTelefone2());
 		}
-		if(objDto.getTeleforne3() != null) {
-			cli.getTelefones().add(objDto.getTeleforne3());
+		if(objDto.getTelefone3() != null) {
+			cli.getTelefones().add(objDto.getTelefone3());
 		}
 		return cli;
 	}
