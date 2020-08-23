@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 
 import com.softWalter.cursoMC.domain.Categoria;
 import com.softWalter.cursoMC.domain.Produto;
-
+//https://docs.spring.io/spring-data/jpa/docs/current/reference/html/
 @Repository
 public interface ProdutoRepository extends JpaRepository<Produto, Integer>{
 
